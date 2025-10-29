@@ -1,15 +1,15 @@
 /**
- * Cualquier CSS incluido aquí será global. 
- * Hemos cambiado la paleta de colores de Infima (el framework base de Docusaurus)
- * para reflejar los colores institucionales de la LSPD: Azul Marino y Dorado/Gris.
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
  */
 
 /* ================================================= */
-/* MODO CLARO (LIGHT MODE) - BASE BLANCA    */
+/* PALETA DE COLORES LSPD - MODO CLARO (LIGHT MODE) */
 /* ================================================= */
 :root {
-  /* AZUL PRINCIPAL (Botones, enlaces, barra de navegación) */
-  --ifm-color-primary: #003366; /* Azul Marino LSPD */
+  /* AZUL MARINO PRINCIPAL (Botones, enlaces, barra de navegación) */
+  --ifm-color-primary: #003366; 
   --ifm-color-primary-dark: #002e5c;
   --ifm-color-primary-darker: #002c59;
   --ifm-color-primary-darkest: #002447;
@@ -17,23 +17,20 @@
   --ifm-color-primary-lighter: #003a73;
   --ifm-color-primary-lightest: #004383;
 
-  /* NARANJA/DORADO para Warnings/Advertencias */
+  /* NARANJA/DORADO para Warnings/Advertencias/Resaltados */
   --ifm-color-warning: #FFC300; 
   --ifm-color-warning-dark: #e6b000;
   
-  /* Color de fondo sutilmente más blanco (opcional) */
-  /* --ifm-background-color: #fcfcfc; */ 
-
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* ================================================= */
-/* MODO OSCURO (DARK MODE) - BASE OSCURA   */
+/* PALETA DE COLORES LSPD - MODO OSCURO (DARK MODE) */
 /* ================================================= */
 [data-theme='dark'] {
-  /* AZUL PRINCIPAL (Mantener la identidad, pero ligeramente más brillante para contraste) */
-  --ifm-color-primary: #1A5499; /* Azul más brillante en modo oscuro */
+  /* AZUL PRINCIPAL más brillante para contraste */
+  --ifm-color-primary: #1A5499; 
   --ifm-color-primary-dark: #174b8a;
   --ifm-color-primary-darker: #164682;
   --ifm-color-primary-darkest: #123969;
@@ -41,15 +38,15 @@
   --ifm-color-primary-lighter: #2062a3;
   --ifm-color-primary-lightest: #2e73b4;
   
-  /* NARANJA/DORADO (Similar al modo claro para consistencia) */
+  /* NARANJA/DORADO para Warnings/Advertencias/Resaltados */
   --ifm-color-warning: #FFD700; 
 
-  /* Fondo de la línea resaltada en el código */
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
 }
 
+
 /* ================================================= */
-/* AJUSTES VISUALES ESPECÍFICOS             */
+/* AJUSTES VISUALES ESPECÍFICOS Y DINÁMICOS         */
 /* ================================================= */
 
 /* Hace que los títulos de la barra lateral sean del color primario (azul marino) */
@@ -62,4 +59,43 @@
 .badge--primary {
     background-color: var(--ifm-color-primary);
     color: white;
+}
+
+
+/* --- EFECTO DE BRILLO DINÁMICO EN BOTÓN PRINCIPAL (ACCEDER A REGLAMENTOS) --- */
+
+.button--lg {
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0); /* Mejora rendimiento 3D */
+    z-index: 1;
+    font-weight: bold;
+    /* Opción: añadir un borde sutil para darle más profundidad */
+    border: 1px solid var(--ifm-color-primary-darker);
+    transition: all 0.3s ease;
+}
+
+/* Pulso de luz sutil al pasar el ratón */
+.button--lg:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 5px var(--ifm-color-warning); /* Blanco y Dorado */
+}
+
+/* Estructura para el efecto de brillo deslizante (Shine Effect) */
+.button--lg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Inicia fuera del botón */
+    width: 100%;
+    height: 100%;
+    /* Franja de luz semi-transparente */
+    background: rgba(255, 255, 255, 0.2); 
+    transition: all 0.5s ease-in-out;
+    transform: skewX(-20deg); /* Inclina el brillo para un look dinámico */
+    z-index: -1;
+}
+
+/* El brillo se desliza de izquierda a derecha cuando el mouse está encima */
+.button--lg:hover::after {
+    left: 100%; 
 }
