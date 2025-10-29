@@ -4,12 +4,15 @@
   padding: 4rem 0;
   text-align: center;
   position: relative;
-  /* RUTA ABSOLUTA RECOMENDADA: */
-  background-image: url('/LSPD-RegidosRP/img/lspd-background.jpg'); /* ¡CAMBIA lspd-background.jpg si el nombre es diferente! */
+  
+  /* RUTA RELATIVA FINAL: Dos niveles hacia arriba (desde pages) hasta static, luego img. */
+  background-image: url('../../static/img/lspd-background.jpg'); 
+  
   background-size: cover;
   background-position: center 30%; 
   min-height: 65vh; 
-  /* Superposición oscura para que el texto destaque */
+  
+  /* Superposición para el color azul marino institucional (003366) */
   box-shadow: inset 0 0 0 1000px rgba(0, 51, 102, 0.75); 
 }
 
