@@ -1,10 +1,10 @@
+// src/pages/index.js
+
+import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
-import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
 function HomepageHeader() {
@@ -12,17 +12,28 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        {/* Aquí puedes añadir tu logo si quieres que sea más grande que el de la navbar */}
+        {/* <img src="img/logo-lspd.png" alt="LSPD Logo" style={{maxWidth: '150px', marginBottom: '20px'}} /> */}
+        
+        <h1 className="hero__title">
+          {siteConfig.title} 
+        </h1>
+        <p className="hero__subtitle">
+          {siteConfig.tagline}
+        </p>
+        
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            🚓 ACCEDER A REGLAMENTOS OFICIALES
           </Link>
         </div>
+        
+        {/* Opcional: Créditos o información adicional */}
+        <p style={{marginTop: '20px', fontSize: '0.9em', color: 'rgba(255,255,255,0.7)'}}>
+          Documentación en vigor a partir del 29 de Octubre de 2025.
+        </p>
       </div>
     </header>
   );
@@ -32,11 +43,26 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`Inicio | ${siteConfig.title}`}
+      description="Documentación y Reglamentos Oficiales del Los Santos Police Department - RegidosRP.">
       <HomepageHeader />
+      {/* Eliminamos el componente <HomepageFeatures /> para tener una página limpia */}
       <main>
-        <HomepageFeatures />
+        <div className="container padding-vert--xl">
+          <div className="row">
+            <div className="col col--6 col--offset-3 text--center">
+              <h2>Misión del LSPD</h2>
+              <p>
+                El Departamento de Policía de Los Santos se dedica a proteger la vida y la propiedad, mantener el orden público y garantizar la seguridad de todos los ciudadanos dentro de los límites de la ley y el respeto mutuo.
+              </p>
+              <Link
+                className="button button--primary"
+                to="/blog">
+                Ver Anuncios Recientes
+              </Link>
+            </div>
+          </div>
+        </div>
       </main>
     </Layout>
   );
