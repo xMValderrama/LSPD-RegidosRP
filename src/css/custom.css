@@ -1,30 +1,65 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Cualquier CSS incluido aquí será global. 
+ * Hemos cambiado la paleta de colores de Infima (el framework base de Docusaurus)
+ * para reflejar los colores institucionales de la LSPD: Azul Marino y Dorado/Gris.
  */
 
-/* You can override the default Infima variables here. */
+/* ================================================= */
+/* MODO CLARO (LIGHT MODE) - BASE BLANCA    */
+/* ================================================= */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  /* AZUL PRINCIPAL (Botones, enlaces, barra de navegación) */
+  --ifm-color-primary: #003366; /* Azul Marino LSPD */
+  --ifm-color-primary-dark: #002e5c;
+  --ifm-color-primary-darker: #002c59;
+  --ifm-color-primary-darkest: #002447;
+  --ifm-color-primary-light: #003870;
+  --ifm-color-primary-lighter: #003a73;
+  --ifm-color-primary-lightest: #004383;
+
+  /* NARANJA/DORADO para Warnings/Advertencias */
+  --ifm-color-warning: #FFC300; 
+  --ifm-color-warning-dark: #e6b000;
+  
+  /* Color de fondo sutilmente más blanco (opcional) */
+  /* --ifm-background-color: #fcfcfc; */ 
+
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* ================================================= */
+/* MODO OSCURO (DARK MODE) - BASE OSCURA   */
+/* ================================================= */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  /* AZUL PRINCIPAL (Mantener la identidad, pero ligeramente más brillante para contraste) */
+  --ifm-color-primary: #1A5499; /* Azul más brillante en modo oscuro */
+  --ifm-color-primary-dark: #174b8a;
+  --ifm-color-primary-darker: #164682;
+  --ifm-color-primary-darkest: #123969;
+  --ifm-color-primary-light: #1d5d9e;
+  --ifm-color-primary-lighter: #2062a3;
+  --ifm-color-primary-lightest: #2e73b4;
+  
+  /* NARANJA/DORADO (Similar al modo claro para consistencia) */
+  --ifm-color-warning: #FFD700; 
+
+  /* Fondo de la línea resaltada en el código */
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+}
+
+/* ================================================= */
+/* AJUSTES VISUALES ESPECÍFICOS             */
+/* ================================================= */
+
+/* Hace que los títulos de la barra lateral sean del color primario (azul marino) */
+.menu__link--active {
+    color: var(--ifm-color-primary);
+    font-weight: bold;
+}
+
+/* Ajuste para que los botones y tags de la documentación sean más institucionales */
+.badge--primary {
+    background-color: var(--ifm-color-primary);
+    color: white;
 }

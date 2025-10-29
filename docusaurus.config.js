@@ -1,50 +1,36 @@
 // @ts-check
 // `@type` JSDoc annotations allow editor autocompletion and type checking
 // (when paired with `@ts-check`).
-// See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from 'prism-react-renderer';
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Foro Oficial LSPD - RegidosRP',
-  tagline: 'Los Santos Police Department',
-  favicon: 'img/favicon.ico',
+  title: 'LSPD - RegidosRP',
+  tagline: 'Documentación y Reglamentos Oficiales del Los Santos Police Department.',
+  favicon: 'img/favicon.ico', // Usando tu favicon.ico
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true, 
   },
 
-  // Set the production url of your site here
+  // Configuración de Despliegue para GitHub Pages
   url: 'https://xMValderrama.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/LSPD-RegidosRP/',
-  
-  // === INICIO DE CONFIGURACIÓN CLAVE PARA DESPLIEGUE ===
-  
-  // GitHub pages deployment config.
-  organizationName: 'xMValderrama', // Tu nombre de usuario.
-  projectName: 'LSPD-RegidosRP', // Tu nombre de repositorio.
-  
-  // **PROPIEDAD AGREGADA/CONFIRMADA:** Define la rama donde se subirá el sitio compilado.
-  deploymentBranch: 'gh-pages', 
-  
-  // === FIN DE CONFIGURACIÓN CLAVE PARA DESPLIEGUE ===
 
-  onBrokenLinks: 'throw',
-
-  // Sugerencia para evitar un warning, aunque no es crítica por ahora
+  organizationName: 'xMValderrama', 
+  projectName: 'LSPD-RegidosRP', 
+  deploymentBranch: 'gh-pages', // Rama donde se subirá el sitio compilado
+  
   trailingSlash: false, 
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
+
+  // Configuración de Idioma
   i18n: {
-    defaultLocale: 'es', // Cambiado a español
-    locales: ['es'],     // Solo usamos español por ahora
+    defaultLocale: 'es', 
+    locales: ['es'], 
   },
 
   presets: [
@@ -54,7 +40,7 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          // Corregido: apunto al repositorio correcto
+          // Enlaces de Edición apuntando a tu repositorio
           editUrl:
             'https://github.com/xMValderrama/LSPD-RegidosRP/tree/main/',
         },
@@ -64,12 +50,9 @@ const config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Corregido: apunto al repositorio correcto
+          // Enlaces de Edición apuntando a tu repositorio
           editUrl:
             'https://github.com/xMValderrama/LSPD-RegidosRP/tree/main/',
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -81,29 +64,30 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/docusaurus-social-card.jpg', // Puedes reemplazar esta imagen
       colorMode: {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'LSPD RegidosRP', // Título corregido
+        title: 'LSPD RegidosRP',
         logo: {
           alt: 'LSPD Logo',
-          src: 'img/logo.svg',
+          // Usando tu logo-lspd.png
+          src: 'img/logo-lspd.png', 
+          srcDark: 'img/lspd_dark.png',
         },
         items: [
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Reglamentos', // Etiqueta corregida
+            label: 'Reglamentos',
           },
-          {to: '/blog', label: 'Anuncios', position: 'left'}, // Etiqueta corregida
+          {to: '/blog', label: 'Anuncios', position: 'left'},
           {
-            // Corregido: apunto al repositorio correcto
+            // Enlace directo a tu repositorio
             href: 'https://github.com/xMValderrama/LSPD-RegidosRP', 
-            label: 'GitHub',
+            label: 'Código Fuente',
             position: 'right',
           },
         ],
@@ -115,25 +99,25 @@ const config = {
             title: 'Documentación',
             items: [
               {
-                label: 'Reglamento Base',
+                label: 'Reglamento Principal',
                 to: '/docs/intro',
               },
             ],
           },
           {
-            title: 'Comunidad',
+            title: 'Recursos',
             items: [
               {
-                label: 'Discord Oficial', // Cambiar a tu enlace de Discord
-                href: 'https://discordapp.com/invite/BWTC7gCRKd', 
+                label: 'Discord Oficial RegidosRP',
+                href: 'https://discord.gg/your-community-invite', // REEMPLAZA ESTE ENLACE
               },
             ],
           },
           {
-            title: 'Más Información',
+            title: 'Contacto',
             items: [
               {
-                label: 'Blog/Anuncios',
+                label: 'Anuncios y Novedades',
                 to: '/blog',
               },
               {
