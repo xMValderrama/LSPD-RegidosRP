@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunklspd_regidos_rp=globalThis.webpackChunklspd_regidos_rp||[]).push([[3153],{6523:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/LSPD-RegidosRP/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

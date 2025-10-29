@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunklspd_regidos_rp=globalThis.webpackChunklspd_regidos_rp||[]).push([[903],{1912:s=>{s.exports=JSON.parse('{"blogBasePath":"/LSPD-RegidosRP/blog","blogTitle":"Blog","authorsListPath":"/LSPD-RegidosRP/blog/authors"}')}}]);
