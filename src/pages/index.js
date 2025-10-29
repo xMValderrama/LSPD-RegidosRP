@@ -8,18 +8,19 @@ import Layout from '@theme/Layout';
 import styles from './index.module.css'; 
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    // Aplica el color Gris/Plata al texto de la cabecera
+    <header className={clsx('hero hero--primary', styles.heroBanner)} style={{ color: 'var(--ifm-hero-text-color)' }}>
       <div className="container">
-        <h1 className="hero__title">
-          {siteConfig.title} 
+        {/* Mensaje de Bienvenida Estético */}
+        <h1 className="hero__title" style={{ fontSize: '3.5rem', fontWeight: 700, letterSpacing: '2px' }}>
+          BIENVENIDO, AGENTE.
         </h1>
-        <p className="hero__subtitle">
-          {siteConfig.tagline}
+        <p className="hero__subtitle" style={{ fontSize: '1.5rem', margin: '20px auto 30px', maxWidth: '800px' }}>
+          Accede a la documentación oficial para garantizar la **integridad, el orden y la justicia** en Los Santos.
         </p>
         
-        {/* CORRECCIÓN: Usando 'button--info' (o 'button--primary') y asegurando el color blanco del texto para el brillo */}
+        {/* Botón Dinámico: 'button--lg' y 'button--info' */}
         <div className={styles.buttons}>
           <Link
             className="button button--info button--lg" 
@@ -29,7 +30,8 @@ function HomepageHeader() {
           </Link>
         </div>
         
-        <p style={{marginTop: '20px', fontSize: '0.9em', color: 'rgba(255,255,255,0.7)'}}>
+        {/* Información de Vigencia con color Gris/Plata */}
+        <p style={{marginTop: '20px', fontSize: '0.9em', color: 'var(--ifm-hero-text-color)'}}>
           Documentación en vigor a partir del 29 de Octubre de 2025.
         </p>
       </div>
@@ -45,24 +47,8 @@ export default function Home() {
       description="Documentación y Reglamentos Oficiales del Los Santos Police Department - RegidosRP.">
       <HomepageHeader />
       
-      {/* Sección de Misión y Contacto */}
-      <main>
-        <div className="container padding-vert--xl">
-          <div className="row">
-            <div className="col col--6 col--offset-3 text--center">
-              <h2>Misión del LSPD</h2>
-              <p>
-                El Departamento de Policía de Los Santos se dedica a proteger la vida y la propiedad, mantener el orden público y garantizar la seguridad de todos los ciudadanos dentro de los límites de la ley y el respeto mutuo. Somos el pilar de la legalidad en RegidosRP.
-              </p>
-              <Link
-                className="button button--primary"
-                to="/blog">
-                Ver Anuncios Recientes
-              </Link>
-            </div>
-          </div>
-        </div>
-      </main>
+      {/* Sección <main> vacía: Quitamos la misión del LSPD */}
+      <main></main>
     </Layout>
   );
 }

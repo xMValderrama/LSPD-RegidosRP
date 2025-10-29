@@ -21,6 +21,9 @@
   
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  
+  /* NUEVO: COLOR DE FUENTE ESTÉTICO Gris Claro / Plata */
+  --ifm-hero-text-color: #CCCCCC; 
 }
 
 /* ================================================= */
@@ -56,6 +59,19 @@
 /* EFECTO DE BRILLO DINÁMICO EN BOTÓN PRINCIPAL     */
 /* ================================================= */
 
+/* Animación de Pulso Constante */
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 10px var(--ifm-color-warning);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+  }
+}
+
 .button--lg {
     position: relative;
     overflow: hidden;
@@ -64,14 +80,18 @@
     font-weight: bold;
     border: 1px solid var(--ifm-color-primary-darker);
     transition: all 0.3s ease;
+    
+    /* APLICA PULSO CONSTANTE */
+    animation: pulse-glow 3s infinite alternate; 
 }
 
+/* Brillo EXTRA al pasar el cursor (hover) */
 .button--lg:hover {
-    /* El efecto de luz en el hover */
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 5px var(--ifm-color-warning); 
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 15px var(--ifm-color-warning); 
     color: white; 
 }
 
+/* Estructura para el efecto de brillo deslizante (Shine Effect) */
 .button--lg::after {
     content: '';
     position: absolute;

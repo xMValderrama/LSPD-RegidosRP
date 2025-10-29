@@ -5,7 +5,7 @@
   text-align: center;
   position: relative;
   
-  /* RUTA RELATIVA CORRECTA: Asegura que el compilador encuentre la imagen localmente. */
+  /* RUTA RELATIVA CORRECTA: Soluciona el error de compilación. */
   background-image: url('../../static/img/lspd-background.jpg'); 
   
   background-size: cover;
