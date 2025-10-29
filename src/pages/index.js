@@ -5,12 +5,11 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import styles from './index.module.css'; // Importa los estilos CSS Module (para el fondo)
+import styles from './index.module.css'; 
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    // Usa la clase 'heroBanner' de index.module.css para aplicar el fondo de imagen
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <h1 className="hero__title">
@@ -20,9 +19,11 @@ function HomepageHeader() {
           {siteConfig.tagline}
         </p>
         
+        {/* CORRECCIÓN: Usando 'button--info' (o 'button--primary') y asegurando el color blanco del texto para el brillo */}
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg" // Clase button--lg para el brillo dinámico
+            className="button button--info button--lg" 
+            style={{ color: 'white' }}
             to="/docs/intro">
             🚓 ACCEDER A REGLAMENTOS OFICIALES
           </Link>
@@ -44,6 +45,7 @@ export default function Home() {
       description="Documentación y Reglamentos Oficiales del Los Santos Police Department - RegidosRP.">
       <HomepageHeader />
       
+      {/* Sección de Misión y Contacto */}
       <main>
         <div className="container padding-vert--xl">
           <div className="row">

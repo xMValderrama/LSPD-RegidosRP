@@ -38,10 +38,19 @@
   
   /* NARANJA/DORADO para Warnings/Advertencias/Resaltados */
   --ifm-color-warning: #FFD700; 
+  
+  /* CORRECCIÓN: Forzar texto y encabezados a blanco puro en modo oscuro para visibilidad */
+  --ifm-font-color-base: #FFFFFF; 
+  --ifm-heading-color: #FFFFFF; 
 
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
 }
 
+/* Forzar la sección de Misión (main) a usar colores claros/blancos en modo oscuro */
+[data-theme='dark'] main h2, 
+[data-theme='dark'] main p {
+    color: var(--ifm-heading-color) !important;
+}
 
 /* ================================================= */
 /* EFECTO DE BRILLO DINÁMICO EN BOTÓN PRINCIPAL     */
@@ -58,6 +67,7 @@
 }
 
 .button--lg:hover {
+    /* El efecto de luz en el hover */
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 5px var(--ifm-color-warning); 
     color: white; 
 }

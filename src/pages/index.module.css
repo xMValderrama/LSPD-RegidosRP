@@ -5,7 +5,7 @@
   text-align: center;
   position: relative;
   
-  /* RUTA RELATIVA FINAL: Dos niveles hacia arriba (desde pages) hasta static, luego img. */
+  /* RUTA RELATIVA CORRECTA: Asegura que el compilador encuentre la imagen localmente. */
   background-image: url('../../static/img/lspd-background.jpg'); 
   
   background-size: cover;
