@@ -1,7 +1,6 @@
 // @ts-check
 // `@type` JSDoc annotations allow editor autocompletion and type checking
 // (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from 'prism-react-renderer';
@@ -22,22 +21,30 @@ const config = {
   // Set the production url of your site here
   url: 'https://xMValderrama.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/LSPD-RegidosRP/',
-
+  
+  // === INICIO DE CONFIGURACIÓN CLAVE PARA DESPLIEGUE ===
+  
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'xMValderrama', // Usually your GitHub org/user name.
-  projectName: 'LSPD-RegidosRP', // Usually your repo name.
+  organizationName: 'xMValderrama', // Tu nombre de usuario.
+  projectName: 'LSPD-RegidosRP', // Tu nombre de repositorio.
+  
+  // **PROPIEDAD AGREGADA/CONFIRMADA:** Define la rama donde se subirá el sitio compilado.
+  deploymentBranch: 'gh-pages', 
+  
+  // === FIN DE CONFIGURACIÓN CLAVE PARA DESPLIEGUE ===
 
   onBrokenLinks: 'throw',
+
+  // Sugerencia para evitar un warning, aunque no es crítica por ahora
+  trailingSlash: false, 
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'es', // Cambiado a español
+    locales: ['es'],     // Solo usamos español por ahora
   },
 
   presets: [
@@ -47,10 +54,9 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          // Corregido: apunto al repositorio correcto
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/xMValderrama/LSPD-RegidosRP/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -58,11 +64,9 @@ const config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          // Corregido: apunto al repositorio correcto
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
+            'https://github.com/xMValderrama/LSPD-RegidosRP/tree/main/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -83,9 +87,9 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'My Site',
+        title: 'LSPD RegidosRP', // Título corregido
         logo: {
-          alt: 'My Site Logo',
+          alt: 'LSPD Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -93,11 +97,12 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Reglamentos', // Etiqueta corregida
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/blog', label: 'Anuncios', position: 'left'}, // Etiqueta corregida
           {
-            href: 'https://github.com/facebook/docusaurus',
+            // Corregido: apunto al repositorio correcto
+            href: 'https://github.com/xMValderrama/LSPD-RegidosRP', 
             label: 'GitHub',
             position: 'right',
           },
@@ -107,46 +112,38 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Documentación',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Reglamento Base',
                 to: '/docs/intro',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'Comunidad',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
+                label: 'Discord Oficial', // Cambiar a tu enlace de Discord
+                href: 'https://discordapp.com/invite/BWTC7gCRKd', 
               },
             ],
           },
           {
-            title: 'More',
+            title: 'Más Información',
             items: [
               {
-                label: 'Blog',
+                label: 'Blog/Anuncios',
                 to: '/blog',
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/xMValderrama/LSPD-RegidosRP',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} LSPD - RegidosRP. Creado Por xValderrama.`,
       },
       prism: {
         theme: prismThemes.github,
