@@ -22,8 +22,12 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   
-  /* NUEVO: COLOR DE FUENTE ESTÉTICO Gris Claro / Plata */
+  /* COLOR DE FUENTE ESTÉTICO Gris Claro / Plata para la cabecera */
   --ifm-hero-text-color: #CCCCCC; 
+  
+  /* CORRECCIÓN: Hace que el texto base (fuera del hero) sea un gris oscuro más suave en modo claro */
+  --ifm-font-color-base: #333333; 
+  --ifm-footer-title-color: #555555; 
 }
 
 /* ================================================= */
@@ -42,14 +46,14 @@
   /* NARANJA/DORADO para Warnings/Advertencias/Resaltados */
   --ifm-color-warning: #FFD700; 
   
-  /* CORRECCIÓN: Forzar texto y encabezados a blanco puro en modo oscuro para visibilidad */
+  /* Forzar texto y encabezados a blanco puro en modo oscuro para visibilidad */
   --ifm-font-color-base: #FFFFFF; 
   --ifm-heading-color: #FFFFFF; 
 
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
 }
 
-/* Forzar la sección de Misión (main) a usar colores claros/blancos en modo oscuro */
+/* Asegurar que el texto fuera del hero se vea bien en modo oscuro */
 [data-theme='dark'] main h2, 
 [data-theme='dark'] main p {
     color: var(--ifm-heading-color) !important;

@@ -5,15 +5,15 @@
   text-align: center;
   position: relative;
   
-  /* RUTA RELATIVA CORRECTA: Soluciona el error de compilación. */
+  /* RUTA RELATIVA: Soluciona el error de compilación. */
   background-image: url('../../static/img/lspd-background.jpg'); 
   
   background-size: cover;
   background-position: center 30%; 
   min-height: 65vh; 
   
-  /* Superposición para el color azul marino institucional (003366) */
-  box-shadow: inset 0 0 0 1000px rgba(0, 51, 102, 0.75); 
+  /* CORRECCIÓN: Superposición con opacidad reducida (0.55) para que la imagen se vea más. */
+  box-shadow: inset 0 0 0 1000px rgba(0, 51, 102, 0.55); 
 }
 
 @media screen and (max-width: 996px) {
